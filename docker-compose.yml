@@ -1,0 +1,14 @@
+version: "3"
+services:
+  selenium:
+    image: selenium/standalone-chrome
+  webdriverio:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 4444:4444
+    stdin_open: true
+    tty: true
+    links:
+      - selenium
