@@ -9,10 +9,9 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
-    hostname: "selenium",
+    hostname: "selenoid",
     port: 4444,
     path: "/wd/hub/",
-
     //
     // ==================
     // Specify Test Files
@@ -23,7 +22,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/**/*.ts'
+        './test/login.spec.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -56,7 +55,6 @@ exports.config = {
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
         maxInstances: 1,
-        //
         browserName: 'chrome',
         'goog:chromeOptions': {
         // to run chrome headless the following flags are required
