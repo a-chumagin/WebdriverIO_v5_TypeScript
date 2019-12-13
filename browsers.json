@@ -1,0 +1,26 @@
+{
+    "chrome": {
+    "default": "78.0",
+    "versions": {
+            "78.0": {
+        "image": "selenoid/vnc_chrome:78.0",
+        "port": "4444",
+        "path": "/",
+        "tmpfs": {"/tmp": "size=512m", "/var": "size=128m"},
+        "shmSize" : 268435456
+        }
+        }
+    },
+    "firefox": {
+    "default": "70.0",
+    "versions": {
+            "70.0": {
+        "image": "selenoid/vnc_firefox:70.0",
+        "port": "4444",
+        "path": "/wd/hub",
+        "tmpfs": {"/tmp": "size=512m", "/var": "size=128m"},
+        "shmSize" : 268435456
+        }
+        }
+    }
+}
