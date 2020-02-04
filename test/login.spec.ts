@@ -1,27 +1,27 @@
 import {expect} from 'chai';
 import {config} from 'src/config';
-import LoginPage from 'src/pages/LogInPage';
+import LogInSteps from 'src/steps/LogInSteps';
 
 describe('Login page', () => {
     beforeEach(function() {
-        LoginPage.open;
+        LogInSteps.openPage;
     });
 
     it('displays message with invalid credentials', () => {
-        LoginPage.loginWithCredentials('foo', 'bar');
+        LogInSteps.loginWithCredentials('foo', 'bar');
 
-        expect(LoginPage.flash).to.include('Your username is invalid!');
+        expect(LogInSteps.flashText).to.eq('Your username is invalid!');
     });
 
     it('should allow access with correct credentials', () => {
-        LoginPage.loginWithCredentials('tomsmith', 'SuperSecretPassword!');
+        LogInSteps.loginWithCredentials('tomsmith', 'SuperSecretPassword!');
 
-        expect(LoginPage.flash).to.include('You logged into a secure area!');
+        expect(LogInSteps.flashText).to.eq('You logged into a secure area!');
     });
 
     it('using config values specified in src/config', () => {
-        LoginPage.loginWithCredentials(config.username, config.password);
+        LogInSteps.loginWithCredentials(config.username, config.password);
 
-        expect(LoginPage.flash).to.include('You logged into a secure area!');
+        expect(LogInSteps.flashText).to.eq('You logged into a secure area!');
     })
 });
