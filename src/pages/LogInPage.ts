@@ -22,10 +22,12 @@ class LoginPage extends BasePage {
         return browser.url('/login');
     }
 
-    loginWithCredentials(username, password) {
+    loginWithCredentials(username :string, password :string) {
+        console.log(`-> loginWithCredentials() with: username = ${username} and password = ${password}`);
         this.username.setValue(username);
         this.password.setValue(password);
         this.submit.click();
+        console.log("<- loginWithCredentials()")
     }
 }
 
