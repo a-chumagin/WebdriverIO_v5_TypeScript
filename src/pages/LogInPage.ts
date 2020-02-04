@@ -21,14 +21,6 @@ class LoginPage extends BasePage {
     get open() {
         return browser.url('/login');
     }
-
-    loginWithCredentials(username :string, password :string) {
-        console.log(`-> loginWithCredentials() with: username = ${username} and password = ${password}`);
-        this.username.setValue(username);
-        this.password.setValue(password);
-        this.submit.click();
-        console.log("<- loginWithCredentials()")
-    }
 }
 
 export default new LoginPage();
