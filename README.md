@@ -10,6 +10,16 @@ npm install
 npm test
 ```
 
+## Getting Started with Docker
+```
+git clone -b selenoid git@github.com:a-chumagin/WebdriverIO_v5_TypeScript.git
+cd WebdriverIO_v5_TypeScript
+docker pull selenoid/vnc_chrome:78.0
+docker pull selenoid/vnc_firefox:70.0
+docker-compose up
+```
+Note: you can check versions for selenoid images in browser.config file
+
 ## Why TypeScript
 TypeScript offers the benefit of types, but you won't find them in this project. I have found TypeScript to be great because of the IDE intellisense and support for the latest JavaScript features: 
 
